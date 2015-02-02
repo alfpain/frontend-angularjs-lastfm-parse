@@ -1,36 +1,27 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
-<title>AngularJS App</title>
-</head>
-<body ng-app="AuthApp">
-  <div ng-hide="currentUser">
-    <form ng-show="scenario == 'Sign up'">
-      <h2>Sign up</h2>
-      Name: <input type="text" ng-model="user.names" /><br />
-      Username: <input type="text" ng-model="user.username" /><br />
-      Password: <input type="password" ng-model="user.password" /><br />
-      <button ng-click="signUp(user)">Sign up</button>
-      or <a href="#" ng-click='scenario="Log in"'>Log in</a>
-    </form>
-    
-    <form ng-show="scenario == 'Log in'">
-      <h2>Log in</h2>
-      Username: <input type="text" ng-model="user.username" /><br />
-      Password: <input type="password" ng-model="user.password" /><br />
-      <button ng-click="logIn(user)">Log in</button>
-      or <a href="#" ng-click='scenario="Sign up"'>Sign up</a>
-    </form>
-  </div>
-  
-  <div ng-show="currentUser">
-    <h1>Welcome {{currentUser.get('username')}}</h1>
-    <p> You have been successfully logged in</p>
-    <button ng-click="logOut(user)">Log out</button>
-  </div>
-  <script type="text/javascript" src = "js/script.js"></script>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frontend AngularJS lastFm</title>
+
+    <!--Css files-->
+    <link rel="stylesheet" type="text/css" href="componentes/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="componentes/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  </head>
+  <body ng-app="miApp" class = "bob">
+    <div ng-view></div>
+    <!--Jquery-->
+    <script type="text/javascript" src="componentes/jquery/jquery-2.1.3.min.js"></script>
+    <!--Bootstrap-->
+    <script type="text/javascript" src="componentes/bootstrap/js/bootstrap.min.js"></script>
+    <!--AngularJS and Angular route-->
+    <script type="text/javascript" src="componentes/angular/angular.min.js"></script>
+    <script type="text/javascript" src="componentes/angular/angular-route.min.js"></script>
+    <!--Parse-->
+    <script type="text/javascript" src="componentes/parse/parse-1.3.4.min.js"></script>
+    <!--Script-->
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
 </html>

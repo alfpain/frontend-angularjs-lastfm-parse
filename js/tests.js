@@ -1,23 +1,30 @@
-describe("Testing", function(){
-  beforeEach(module('AuthApp'));
+describe('PasswordController', function() {
+  beforeEach(module('miApp'));
+
   var $controller;
-   beforeEach(inject(function(_$controller_){
+
+  beforeEach(inject(function(_$controller_){
     // The injector unwraps the underscores (_) from around the parameter names when matching
     $controller = _$controller_;
   }));
 
-  it("si es verdadero", function(){
-    expect(user).not.toBe("");
-
+  describe('$scope.grade', function() {
+    it('sets the strength to "strong" if the password length is >8 chars', function() {
+      var $scope = {};
+      var controller = $controller('jsonData', { $scope: $scope });
+      $scope.password = 'longerthaneightchars';
+      $scope.grade();
+      expect($scope.strength).toEqual('strong');
+    });
   });
-  it("asdsa"), function(){
+});
 
-     expect(user).toEqual(0);
-     
-  }
 
-  it("prueba"), function(){
 
-    expect($('<input type="text" />').focus()).toBeFocused()
-  }
+  describe("vacio", function() {
+    it('si no esta vacio', function() {
+
+      expect(app).not.toBe('');
+    });
+  });
 });
