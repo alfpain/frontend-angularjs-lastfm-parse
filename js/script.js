@@ -1,3 +1,16 @@
+function passChecker(password){
+	var pattern=/^[a-zA-Z0-9]*$/;
+	var matchStatus = pattern.test(password); // a boolean
+	if (password.length<=6){
+		//alert("Your password is too weak!");
+		return "Still Weak. Try a longer password...";
+	}else if(matchStatus==false){
+		return "Special characters detected. Try another password...";
+	}else{
+		//alert("Your password have strong strength!");
+		return true;
+	};
+};
 
 Parse.initialize("o738tDIjX7Oq1jSB1PtSG6LfVeZqOgpaKH0pK3dt", "p7JfKdqPlYwWoenFcH1pnxR73YDzNaHAjz6iAwhq");
 
