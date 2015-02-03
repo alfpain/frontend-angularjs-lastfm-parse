@@ -35,3 +35,10 @@ input{
 .container-fluid{
 	background-color: #ED1B24;
 }
+
+select {background-color: black;
+border-radius: 10px;
+}
+option{
+	border-radius: 10px;
+}

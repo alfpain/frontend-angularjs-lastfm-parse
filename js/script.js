@@ -81,5 +81,13 @@ app.controller('jsonData', function ($scope, $http) {
     $scope.ordenarPor = function(orden) {
       $scope.ordenSeleccionado = orden;
     };
+
+    $scope.filterTypes = [
+			{name: "Global", search: "buscar"},
+			{name: "Artista", search: "buscar.artist.name"}, 
+			{name: "Canción", search: "buscar.name"},
+			{name: "Duración", search: "buscar.duration"}
+		];
+		$scope.selectedFilter = $scope.filterTypes[0];
 });
 

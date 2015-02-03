@@ -17,26 +17,20 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter <span class="caret"></span></a>
-	         <ul class="dropdown-menu" role="menu">
-            <li><a ng-click="ordenarPor('artist.name')">Name Artits</a></li>
-            <li class="divider"></li>
-            <li><a  ng-click="ordenarPor('name')">Name Song</a></li>
-            <li class="divider"></li>
-            <li><a ng-click="ordenarPor('duration')">Duration song</a></li>
-            <li class="divider"></li>
-            <li><a ng-click="ordenarPor('playcount')"> Play Count</a></li>
-            <li class="divider"></li>
-            <li><a ng-click="ordenarPor('listeners')">Listeners</a></li>
-          </ul>
+				<li>
+					<a   role="button" aria-expanded="false"> <select id="selectOption" data-ng-model="selectedFilter" ng-options="opt as opt.name for opt in filterTypes"></select></a>
+
 				</li>
 				<li><a href="#/" ng-click="logOut(user)">Log out</a></li>
         		<li><a>Welcome {{currentUser.get('username')}}</a></li>
                   <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-<input type="text" class="form-control" placeholder="search songs" ng-model="buscar">
+          <input ng-show="selectedFilter.search=='buscar'" type="text" class="form-control" placeholder="Search Global" ng-model="buscar"></input>
+          <input ng-show="selectedFilter.search=='buscar.name'" type="text" class="form-control" placeholder="Search song" ng-model="buscar.name"></input>
+          <input ng-show="selectedFilter.search=='buscar.artist.name'" type="text" class="form-control" placeholder="Search  name artist" ng-model="buscar.artist.name"></input>
+          <input ng-show="selectedFilter.search=='buscar.duration'" type="text" class="form-control" placeholder="Search something" ng-model="buscar.duration"></input>
         </div>
+       
       </form>
 			</ul>
 
